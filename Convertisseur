@@ -28,7 +28,7 @@ def transform(n):
 
     return shadock_list
 # n est l'input du nombre a transformer
-n = 25
+n = int(input())
 
 # On appel transforme avec n comme input et on stock dans m la valeurs transformer
 m = transform(n)
