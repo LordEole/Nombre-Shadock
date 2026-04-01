@@ -1,0 +1,37 @@
+# La fonction de transformation
+def transform(n):
+    # r_list, la liste des restes pour le passage en base 4
+    r_list = []
+    # shadock_list, pour le changement de vocabulaire
+    shadock_list = []
+    
+    # Passage de n en base 10 a une liste de terme pour n en base 4
+    while n >= 4:
+        r = n % 4
+        r_list.append(r)
+        n = n // 4
+    r_list.append(n)
+
+    # Traduction de la liste de terme en base 4 dans l'alphabet shadock
+    for number in r_list:
+        if number == 0:
+            shadock_list.append("Ga")
+        if number == 1:
+            shadock_list.append("Bu")
+        if number == 2:
+            shadock_list.append("Zo")
+        if number == 3:
+            shadock_list.append("Meu")
+
+    # Reverse la liste car on lit de gauche a droite, mais les restes sont ajouté dans l'autre sens lors de la conversion de base
+    shadock_list = shadock_list[::-1]
+
+    return shadock_list
+# n est l'input du nombre a transformer
+n = 25
+
+# On appel transforme avec n comme input et on stock dans m la valeurs transformer
+m = transform(n)
+
+# On print pour avoir notre nombre en shadock
+print(m)
